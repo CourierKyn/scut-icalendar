@@ -1,6 +1,6 @@
 # scut-icalendar
 
-本项目致力于将校方提供的课程表转换成 iCalendar 标准日历文件。（可用于 iOS 日历、Google 日历等）
+本项目致力于将校方提供的课程表转换成 iCalendar 标准日历文件。
 
 ## 示例
 
