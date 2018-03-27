@@ -11,7 +11,7 @@ wait = WebDriverWait(browser, 10)
 
 
 def login():
-    browser.get('http://xsweb.scuteo.com/(20re51fzh5fh0nfdxfmbchbj)/xs_main.aspx?xh=201636438964')
+    browser.get('http://xsweb.scuteo.com/(20re51fzh5fh0nfdxfmbchbj)/xs_main.aspx?xh=***********')
     print('login')
 
 
