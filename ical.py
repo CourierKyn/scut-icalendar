@@ -78,6 +78,8 @@ class Course:
             event.add('dtend', start_date + timedelta(-3, weeks=self.week[-1] - self.week[0]))
         if self.location:
             event['location'] = vText(self.location)
+        if self.professor:
+            event['description'] = vText(self.professor)
         event['uid'] = vText('{}({}-{}){}'.format(self.weekday, self.period[0], self.period[-1], self.name))
         return event
 
