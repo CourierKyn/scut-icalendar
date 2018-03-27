@@ -27,8 +27,8 @@ def login():
     button = wait.until(
         expected_conditions.element_to_be_clickable((by.ID, 'Button1'))
     )
-    user_name.send_keys('201636438964')
-    password.send_keys('Lky5237227')
+    user_name.send_keys('***********')
+    password.send_keys('**********')
 
 
 def download_image(url):
