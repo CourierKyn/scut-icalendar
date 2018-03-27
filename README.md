@@ -18,18 +18,18 @@
 
 ## 思路
 
-[教务管理](http://xsweb.scuteo.com/default2.aspx)  
-    ↓  
-专业课表查询  
-    ↓  
-[example.html](https://github.com/CourierKyn/scut-icalendar/blob/master/example.html)  
-    ↓  
-`[['马克思主义基本原理\n1-8,11-18(1,2)\n左伟清\n340301', ...], ...]` → `[[['马克思主义基本原理',  (1, 8, 11, 18), (1, 2), '左伟清', '340301'], ...], ...]`  
-    ↓  
-`[['马克思主义基本原理\n1-8,11-18(1,2)\n左伟清\n340301', ...], ...]` → `[[['马克思主义基本原理',  (1, 8, 11, 18), (1, 2), '左伟清', '340301'], ...], ...]`
-    ↓  
+[教务管理](http://xsweb.scuteo.com/default2.aspx) 专业课表查询 → [example.html](https://github.com/CourierKyn/scut-icalendar/blob/master/example.html)
+
 ```
-# following text is lowered
+[['马克思主义基本原理\n1-8,11-18(1,2)\n左伟清\n340301', ...], ...]` → `[[['马克思主义基本原理',  (1, 8, 11, 18), (1, 2), '左伟清', '340301'], ...], ...]
+
+    ↓
+
+[['马克思主义基本原理\n1-8,11-18(1,2)\n左伟清\n340301', ...], ...]` → `[[['马克思主义基本原理',  (1, 8, 11, 18), (1, 2), '左伟清', '340301'], ...], ...]
+
+    ↓
+
+...
 begin:vevent
 summary:马克思主义基本原理
 dtstart;value=date-time:20180226t080000
@@ -39,4 +39,7 @@ rrule:freq=weekly;count=17
 exdate:20180423t080000,20180430t080000
 location:340301
 end:vevent
+...
+
+# text above is lowered
 ```
