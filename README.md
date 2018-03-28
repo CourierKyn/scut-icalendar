@@ -20,7 +20,7 @@
 
 ## 思路
 
-[教务管理](http://xsweb.scuteo.com/default2.aspx) 专业课表查询 → [example.html](https://github.com/CourierKyn/scut-icalendar/blob/master/example.html)
+[教务管理](http://xsweb.scuteo.com/default2.aspx) 专业推荐课表查询 → [example.html](https://github.com/CourierKyn/scut-icalendar/blob/master/example.html)
 
 ```
 [['马克思主义基本原理\n1-8,11-18(1,2)\n左伟清\n340301', ...], ...]
