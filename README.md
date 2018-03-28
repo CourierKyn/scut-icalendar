@@ -4,7 +4,7 @@
 
 ## 示例
 
-[16 轻化工程 1 班课程表](https://github.com/CourierKyn/scut-icalendar/releases/download/v1.0/final.ics)
+[16 轻化工程 1 班课程表](https://github.com/CourierKyn/scut-icalendar/raw/master/final.ics)
 
 [16 轻化工程 1 班课程表（百度网盘）](https://pan.baidu.com/s/1Uw44BF_rqgZxUe3qwEJjDQ)
 
