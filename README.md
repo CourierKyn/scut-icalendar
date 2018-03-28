@@ -39,6 +39,7 @@ dtend;value=date-time:20180226t094000
 uid:1(1-2)马克思主义基本原理
 rrule:freq=weekly;count=17
 exdate:20180423t080000,20180430t080000
+decription:左伟清
 location:340301
 end:vevent
 ...
