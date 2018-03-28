@@ -6,11 +6,11 @@
 
 [16 轻化工程 1 班课程表](https://github.com/CourierKyn/scut-icalendar/raw/master/final.ics)
 
-[16 轻化工程 1 班课程表（百度网盘）](https://pan.baidu.com/s/1Uw44BF_rqgZxUe3qwEJjDQ)
+[16 轻化工程 1 班课程表（百度网盘）](https://pan.baidu.com/s/1SeirJ3xOF-YLbAS5f1nAew)
 
 ## 使用
 
-在一些 Android 手机上，你下载此文件，然后选择在日历类 app 中打开，就能导入课程表到日历。在 iOS 设备上，你必须在 Safari 浏览器中下载并打开该文件，才能课程表到导入日历。在 Mac 和 Windows 电脑上，你下载并双击此文件即可。
+在一些 Android 手机上，你下载此文件，然后选择在日历类 app 中打开，就能导入课程表到日历。在 iOS 设备上，你必须在 Safari 浏览器中下载并打开该文件，才能课程表导入到日历。在 Mac 和 Windows 电脑上，你下载并双击此文件即可。
 
 在另一些设备上，你无法使用此文件。如果你的日历类 app 可以与 Google 日历同步的话，那么你可以在电脑上用浏览器打开 Google 日历，然后：
 
