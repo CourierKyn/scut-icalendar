@@ -104,8 +104,7 @@ class Course:
 
 
 def main():
-    file_name = '16轻化工程1班'
-    with open('releases' + os.sep + file_name + '.html', encoding='gb2312') as f:
+    with open('example.html', encoding='gb2312') as f:
         curriculum = Curriculum(f)
     for i in range(1, 8):
         print(i, end=':\n')
@@ -114,7 +113,7 @@ def main():
     cal = Calendar(prodid='-//My calendar product//franklinli.com//', version='2.0')
     for i in (curriculum.to_courses()):
         cal.add_component(i.to_event())
-    with open('releases' + os.sep + file_name + '.ics', 'wb') as f:
+    with open('example.ics', 'wb') as f:
         f.write(cal.to_ical())
 
 
