@@ -3,6 +3,7 @@ from icalendar import vText, vDatetime
 from datetime import date, time, datetime, timedelta
 from bs4 import BeautifulSoup
 import re
+import os
 
 
 class Curriculum:
@@ -23,7 +24,7 @@ class Curriculum:
                         clss.insert(1, week_period.rsplit('(', 1)[0])
                         self.classes[j].append(clss)
         for i in range(0, 7):
-            for j in range(1, 15):
+            for j in range(1, 20):
                 if len(self.classes[i]) > 1:
                     k = j % (len(self.classes[i]) - 1)
                     if self.classes[i][k][:2] == self.classes[i][k + 1][:2] and self.classes[i][k][3:] == \
@@ -34,13 +35,27 @@ class Curriculum:
     def to_courses(self):
         for i in range(0, 7):
             for j in self.classes[i]:
-                week = []
-                for k in re.findall(r'[0-9]+', j[1]):
-                    week.append(int(k))
-                period = []
-                for k in re.findall(r'[0-9]+', j[2]):
-                    period.append(int(k))
-                yield Course(j[0], tuple(week), weekday=i + 1, period=tuple(period), professor=j[3], location=j[4])
+                try:
+                    if '双' and '-' in j[1] and ',' not in j[1]:
+                        week = [-int(k) for k in re.findall(r'[0-9]+', j[1])]
+                    else:
+                        week = []
+                        for k in j[1].split(','):
+                            if '-' in k:
+                                for l in k.split('-'):
+                                    week.append(int(l))
+                            else:
+                                week.append(int(k))
+                                week.append(int(k))
+                    period = []
+                    for k in re.findall(r'[0-9]+', j[2]):
+                        period.append(int(k))
+                    if j[4] == ' ':
+                        yield Course(j[0], tuple(week), weekday=i + 1, period=tuple(period), professor=j[3])
+                    else:
+                        yield Course(j[0], tuple(week), weekday=i + 1, period=tuple(period), professor=j[3], location=j[4])
+                except:
+                    pass
 
 
 class SchoolCalendar:
@@ -59,20 +74,24 @@ class Course:
 
     def to_event(self):
         event = Event(summary=self.name)
-        start_date = SchoolCalendar.first_monday + timedelta(self.weekday - 1, weeks=self.week[0] - 1)
+        start_date = SchoolCalendar.first_monday + timedelta(self.weekday - 1, weeks=abs(self.week[0]) - 1)
         if self.period:
             start_time = SchoolCalendar.schedule[self.period[0] - 1]
             dt_end = datetime.combine(start_date, SchoolCalendar.schedule[self.period[-1] - 1]) + timedelta(minutes=45)
             event.add('dtstart', datetime.combine(start_date, start_time))
             event.add('dtend', dt_end)
-            event.add('rrule', {'freq': 'weekly', 'count': self.week[-1] - self.week[0]})
-            if len(self.week) > 3:
-                ex_week = []
-                for i in range(1, len(self.week) // 2):
-                    for j in range(self.week[i] + 1, self.week[i + 1]):
-                        ex_week.append(j)
-                ex_date = [datetime.combine(start_date + timedelta(weeks=i - self.week[0]), start_time) for i in ex_week]
-                event.add('exdate', ex_date)
+            if self.week[0] < 0:
+                event.add('rrule', {'freq': 'weekly', 'interval': 2, 'count': abs(self.week[-1] - self.week[0])})
+            else:
+                event.add('rrule', {'freq': 'weekly', 'count': self.week[-1] - self.week[0]})
+                if len(self.week) > 3:
+                    ex_week = []
+                    for i in range(1, len(self.week) // 2):
+                        for j in range(self.week[i] + 1, self.week[i + 1]):
+                            ex_week.append(j)
+                    ex_date = [datetime.combine(start_date + timedelta(weeks=i - self.week[0]), start_time) for i in
+                               ex_week]
+                    event.add('exdate', ex_date)
         else:
             event.add('dtstart', start_date)
             event.add('dtend', start_date + timedelta(-3, weeks=self.week[-1] - self.week[0]))
@@ -84,14 +103,20 @@ class Course:
         return event
 
 
-with open('example.html', encoding='gb2312') as f:
-    curriculum = Curriculum(f)
-for i in range(1, 8):
-    print(i, end=':\n')
-    for j in curriculum.classes[i - 1]:
-        print(j)
-cal = Calendar(prodid='-//My calendar product//franklinli.com//', version='2.0')
-for i in curriculum.to_courses():
-    cal.add_component(i.to_event())
-with open('final.ics', 'wb') as f:
-    f.write(cal.to_ical())
+def main():
+    file_name = '16轻化工程1班'
+    with open('releases' + os.sep + file_name + '.html', encoding='gb2312') as f:
+        curriculum = Curriculum(f)
+    for i in range(1, 8):
+        print(i, end=':\n')
+        for j in curriculum.classes[i - 1]:
+            print(j)
+    cal = Calendar(prodid='-//My calendar product//franklinli.com//', version='2.0')
+    for i in (curriculum.to_courses()):
+        cal.add_component(i.to_event())
+    with open('releases' + os.sep + file_name + '.ics', 'wb') as f:
+        f.write(cal.to_ical())
+
+
+if __name__ == '__main__':
+    main()
