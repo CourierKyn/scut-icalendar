@@ -4,9 +4,7 @@
 
 ## 示例
 
-[16 轻化工程 1 班课程表](https://github.com/CourierKyn/scut-icalendar/raw/master/releases/16轻化工程1班.ics)
-
-[16 轻化工程 1 班课程表（iCloud 云盘）](https://www.icloud.com/iclouddrive/0gceOBZ4ZsuClMER-8PN5_8rA)
+[16 轻化工程 1 班课程表](https://github.com/CourierKyn/scut-icalendar/releases/download/v1.1/16.1.ics)
 
 ## 使用
 
@@ -22,15 +20,15 @@
 
 以下 iCalendar 日历文件供各专业各班级同学使用：
 
-* https://github.com/CourierKyn/scut-icalendar/raw/master/releases/16轻化工程2班.ics
+* [17轻化工程1班](https://github.com/CourierKyn/scut-icalendar/releases/download/v1.1/17.1.ics)
 
-* https://github.com/CourierKyn/scut-icalendar/raw/master/releases/17资源环境科学.ics
+* [17轻化工程2班](https://github.com/CourierKyn/scut-icalendar/releases/download/v1.1/17.2.ics)
 
-* https://github.com/CourierKyn/scut-icalendar/raw/master/releases/17轻化工程1班.ics
+* [17资源环境科学](https://github.com/CourierKyn/scut-icalendar/releases/download/v1.1/17.ics)
 
-* https://github.com/CourierKyn/scut-icalendar/raw/master/releases/17轻化工程2班.ics
+* [16轻化工程2班](https://github.com/CourierKyn/scut-icalendar/releases/download/v1.1/16.2.ics)
 
-* https://github.com/CourierKyn/scut-icalendar/raw/master/releases/17资源环境科学.ics
+* [16资源环境工程](https://github.com/CourierKyn/scut-icalendar/releases/download/v1.1/16.ics)
 
 
 ## 思路
