@@ -4,19 +4,32 @@
 
 ## 示例
 
-[16 轻化工程 1 班课程表](https://github.com/CourierKyn/scut-icalendar/raw/master/final.ics)
-
-[16 轻化工程 1 班课程表（百度网盘）](https://pan.baidu.com/s/1SeirJ3xOF-YLbAS5f1nAew)
+[16 轻化工程 1 班课程表](https://github.com/CourierKyn/scut-icalendar/releases/download/v1.1/16.1.ics)
 
 ## 使用
 
-在一些 Android 手机上，你下载此文件，然后选择在日历类 app 中打开，就能导入课程表到日历。在 iOS 设备上，你必须在 Safari 浏览器中下载并打开该文件，才能课程表导入到日历。在 Mac 和 Windows 电脑上，你下载并双击此文件即可。
+在一些 Android 手机上，你下载此文件，然后选择在日历类 app 中打开，就能导入课程表到日历。在 iOS 设备上，你必须在 Safari 浏览器中下载并打开该文件，才能课程表导入到日历。在 Mac 和 Windows 电脑上，你下载并打开此文件即可。
 
 在另一些设备上，你无法使用此文件。如果你的日历类 app 可以与 Google 日历同步的话，那么你可以在电脑上用浏览器打开 Google 日历，然后：
 
 1. 点击右上角的 “设置” 图标。
 2. 点击导入和导出。
 3. 点击从计算机中选择文件，然后选择此文件。
+
+## releases
+
+以下 iCalendar 日历文件供各专业各班级同学使用：
+
+* [17轻化工程1班](https://github.com/CourierKyn/scut-icalendar/releases/download/v1.1/17.1.ics)
+
+* [17轻化工程2班](https://github.com/CourierKyn/scut-icalendar/releases/download/v1.1/17.2.ics)
+
+* [17资源环境科学](https://github.com/CourierKyn/scut-icalendar/releases/download/v1.1/17.ics)
+
+* [16轻化工程2班](https://github.com/CourierKyn/scut-icalendar/releases/download/v1.1/16.2.ics)
+
+* [16资源环境工程](https://github.com/CourierKyn/scut-icalendar/releases/download/v1.1/16.ics)
+
 
 ## 思路
 
