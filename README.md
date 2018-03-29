@@ -4,9 +4,9 @@
 
 ## 示例
 
-[16 轻化工程 1 班课程表](https://github.com/CourierKyn/scut-icalendar/raw/master/final.ics)
+[16 轻化工程 1 班课程表](https://github.com/CourierKyn/scut-icalendar/raw/master/releases/16轻化工程1班.ics)
 
-[16 轻化工程 1 班课程表（百度网盘）](https://pan.baidu.com/s/1SeirJ3xOF-YLbAS5f1nAew)
+[16 轻化工程 1 班课程表（iCloud 云盘）](https://www.icloud.com/iclouddrive/0gceOBZ4ZsuClMER-8PN5_8rA)
 
 ## 使用
 
@@ -17,6 +17,21 @@
 1. 点击右上角的 “设置” 图标。
 2. 点击导入和导出。
 3. 点击从计算机中选择文件，然后选择此文件。
+
+## releases
+
+以下 iCalendar 日历文件供各专业各班级同学使用：
+
+* https://github.com/CourierKyn/scut-icalendar/raw/master/releases/16轻化工程2班.ics
+
+* https://github.com/CourierKyn/scut-icalendar/raw/master/releases/17资源环境科学.ics
+
+* https://github.com/CourierKyn/scut-icalendar/raw/master/releases/17轻化工程1班.ics
+
+* https://github.com/CourierKyn/scut-icalendar/raw/master/releases/17轻化工程2班.ics
+
+* https://github.com/CourierKyn/scut-icalendar/raw/master/releases/17资源环境科学.ics
+
 
 ## 思路
 
