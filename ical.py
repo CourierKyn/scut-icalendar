@@ -7,9 +7,8 @@ import os
 
 
 class Curriculum:
-    classes = [[], [], [], [], [], [], []]
-
     def __init__(self, html):
+        self.classes = [[], [], [], [], [], [], []]
         soup = BeautifulSoup(html, 'lxml')
         table_doc = soup.select('#Table6')[0].select('td')
         table_text = [str(i).split('>', 1)[-1].rsplit('<', 1)[0] for i in table_doc]
@@ -103,8 +102,8 @@ class Course:
         return event
 
 
-def main():
-    with open('example.html', encoding='gb2312') as f:
+def main(file):
+    with open(file) as f:
         curriculum = Curriculum(f)
     for i in range(1, 8):
         print(i, end=':\n')
@@ -113,9 +112,11 @@ def main():
     cal = Calendar(prodid='-//My calendar product//franklinli.com//', version='2.0')
     for i in (curriculum.to_courses()):
         cal.add_component(i.to_event())
-    with open('example.ics', 'wb') as f:
+    with open(file.rsplit('.', 1)[0] + '.ics', 'wb') as f:
         f.write(cal.to_ical())
 
 
 if __name__ == '__main__':
-    main()
+    for file in os.listdir(os.getcwd()):
+        if re.match(r'.+\.html$', file):
+            main(file)
