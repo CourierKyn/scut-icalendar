@@ -1,6 +1,6 @@
 # scut-icalendar
 
-本项目致力于将校方提供的课程表转换成 iCalendar 标准日历文件。
+本项目致力于将校方提供的课程表转换成 iCalendar 标准（[RFC 5545](https://tools.ietf.org/html/rfc5545)）日历文件。
 
 ## 示例
 
