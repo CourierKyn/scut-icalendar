@@ -10,7 +10,7 @@ wait = WebDriverWait(driver, 10)
 
 def login():
     try:
-        driver.get('http://xsweb.scuteo.com/(ach3c545pkt1rh55y4fos0jt)/xs_main.aspx?xh=201636438964')
+        driver.get('http://xsweb.scuteo.com/(mbsbtj30m3eh5o55ztuynp55)/xs_main.aspx?xh=201636438964')
     except:
         login()
 
@@ -68,14 +68,15 @@ def select_xy(index):
             while [i.text for i in Select(driver.find_element_by_name('zy')).options] == zy_options:
                 counter += 1
                 if counter == 10:
-                    print(index)
+                    print('timeout from xy', index)
                     return 0
                 time.sleep(0.1)
+            print('xy {}:'.format(index))
             return 1
         else:
             return 0
     except:
-        print(index)
+        print('exception from xy', index)
         return 0
 
 
@@ -84,7 +85,17 @@ def select_zy(index):
         wait_zy()
         time.sleep(0.1)
         wait_zy()
-        if 0 <= index < len(Select(driver.find_element_by_name('zy')).options):
+        if 0 == index < len(Select(driver.find_element_by_name('zy')).options) - 1:
+            wait_kb()
+            time.sleep(0.5)
+            wait_kb()
+            kb_options = [i.text for i in Select(driver.find_element_by_name('kb')).options]
+            Select(driver.find_element_by_name('zy')).select_by_index(index)
+            wait_kb()
+            time.sleep(0.5)
+            wait_kb()
+            return 1
+        elif 0 < index < len(Select(driver.find_element_by_name('zy')).options) - 1:
             wait_kb()
             time.sleep(0.5)
             wait_kb()
@@ -94,15 +105,24 @@ def select_zy(index):
             time.sleep(0.5)
             wait_kb()
             counter = 0
+            while len(Select(driver.find_element_by_name('kb')).options) == 1:
+                counter += 1
+                if counter == 5:
+                    return 0
+                time.sleep(0.1)
+                if len(Select(driver.find_element_by_name('kb')).options) > 1:
+                    return 1
             while [i.text for i in Select(driver.find_element_by_name('kb')).options] == kb_options:
                 counter += 1
                 if counter == 5:
+                    print('timeout from zy', index)
                     return 0
                 time.sleep(0.1)
             return 1
         else:
             return 0
     except:
+        print('exception from zy', index)
         return 0
 
 
@@ -118,17 +138,30 @@ def select_kb(index):
             while driver.find_element_by_id('Table6').text == table:
                 counter += 1
                 if counter == 5:
-                    return None
+                    return driver.page_source
                 time.sleep(0.1)
             return driver.page_source
     except:
-        pass
+        reselect_kb(index)
+
+
+def reselect_kb(index):
+    try:
+        wait_kb()
+        wait_kb()
+        Select(driver.find_element_by_name('kb')).select_by_index(index)
+        wait_table()
+        time.sleep(0.5)
+        wait_table()
+        return driver.page_source
+    except:
+        reselect_kb(index)
 
 
 def main():
     login()
     inquire()
-    for i in range(6, 8):
+    for i in range(20, 21):
         if select_xy(i):
             for j in range(0, 40):
                 if select_zy(j):

@@ -18,9 +18,11 @@ class Curriculum:
                 for j in range(0, 7):
                     if 'br' in week[j]:
                         clss = week[j].split('<br/>')[:-1]
-                        week_period = clss.pop(1)
-                        clss.insert(1, week_period.rsplit('(', 1)[-1].replace(')', ''))
-                        clss.insert(1, week_period.rsplit('(', 1)[0])
+                        k_range = len(clss) // 6 + 1
+                        for k in range(0, k_range):
+                            week_period = clss.pop(1 + k * 7)
+                            clss.insert(1 + k * 7, week_period.rsplit('(', 1)[-1].replace(')', ''))
+                            clss.insert(1 + k * 7, week_period.rsplit('(', 1)[0])
                         self.classes[j].append(clss)
         for i in range(0, 7):
             for j in range(1, 20):
@@ -30,12 +32,37 @@ class Curriculum:
                             self.classes[i][k + 1][3:]:
                         self.classes[i][k][2] = self.classes[i][k][2] + ',' + self.classes[i][k + 1][2]
                         del self.classes[i][k + 1]
+        inf = 0
+        for i in self.classes:
+            for j in i:
+                if len(j) % 7 == 5 and len(j) >= 12:
+                    inf = 1
+                    index = i.index(j)
+                    for k in range(0, len(j) // 7 + 1):
+                        i.insert(index, j[len(j) - 5 - k * 7:len(j) - 1 - k * 7])
+                    i.remove(j)
+        if inf:
+            for i in self.classes:
+                if len(i) > 2:
+                    for j in i:
+                        for k in i:
+                            if j[:2] == k[:2] and j[3:] == k[3:] and j[2] != k[2]:
+                                if i.index(j) < i.index(k):
+                                    j[2] = j[2] + ',' + k[2]
+                                    del i[i.index(k)]
+                                else:
+                                    k[2] = k[2] + ',' + j[2]
+                                    del i[i.index(j)]
+        for i in range(1, 8):
+            print(i, end=':\n')
+            for j in self.classes[i - 1]:
+                print(j)
 
     def to_courses(self):
         for i in range(0, 7):
             for j in self.classes[i]:
                 try:
-                    if '双' and '-' in j[1] and ',' not in j[1]:
+                    if '双' in j[1] and '-' in j[1] and ',' not in j[1]:
                         week = [-int(k) for k in re.findall(r'[0-9]+', j[1])]
                     else:
                         week = []
@@ -117,6 +144,6 @@ def main(file):
 
 
 if __name__ == '__main__':
-    for file in os.listdir(os.getcwd()):
-        if re.match(r'.+\.html$', file):
-            main(file)
+    for file_name in os.listdir(os.getcwd()):
+        if re.match(r'.+\.html$', file_name):
+            main(file_name)
