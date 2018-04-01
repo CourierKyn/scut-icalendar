@@ -20,6 +20,8 @@
 
 以下 iCalendar 日历文件供各专业各班级同学使用：
 
+* [16工业设计实验班](https://github.com/CourierKyn/scut-icalendar/releases/download/v1.2.1/16gongyeshejishiyanban.ics)
+
 * [17轻化工程1班](https://github.com/CourierKyn/scut-icalendar/releases/download/v1.1/17.1.ics)
 
 * [17轻化工程2班](https://github.com/CourierKyn/scut-icalendar/releases/download/v1.1/17.2.ics)
