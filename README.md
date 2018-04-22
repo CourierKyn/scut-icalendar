@@ -12,35 +12,6 @@
 2. 点击导入和导出。
 3. 点击从计算机中选择文件，然后选择此文件。
 
-## 思路
-
-[教务管理](http://xsweb.scuteo.com/default2.aspx) → 专业推荐课表查询
-
-```
-[['马克思主义基本原理\n1-8,11-18(1,2)\n左伟清\n340301', ...], ...]
-
-    ↓
-
-[[['马克思主义基本原理',  (1, 8, 11, 18), (1, 2), '左伟清', '340301'], ...], ...]
-
-    ↓
-
-...
-begin:vevent
-summary:马克思主义基本原理
-dtstart;value=date-time:20180226t080000
-dtend;value=date-time:20180226t094000
-uid:1(1-2)马克思主义基本原理
-rrule:freq=weekly;count=17
-exdate:20180423t080000,20180430t080000
-description:左伟清
-location:340301
-end:vevent
-...
-
-# text above is lowered
-```
-
 ## releases
 
 * [17高分子3班](https://github.com/CourierKyn/scut-icalendar/releases/download/v4.0/17gaofenzi3ban.ics)
@@ -992,3 +963,32 @@ end:vevent
 * [15交通运输](https://github.com/CourierKyn/scut-icalendar/releases/download/v4.0/15jiaotongyunshu.ics)
 
 * [15交通工程](https://github.com/CourierKyn/scut-icalendar/releases/download/v4.0/15jiaotonggongcheng.ics)
+
+## 思路
+
+[教务管理](http://xsweb.scuteo.com/default2.aspx) → 专业推荐课表查询
+
+```
+[['马克思主义基本原理\n1-8,11-18(1,2)\n左伟清\n340301', ...], ...]
+
+    ↓
+
+[[['马克思主义基本原理',  (1, 8, 11, 18), (1, 2), '左伟清', '340301'], ...], ...]
+
+    ↓
+
+...
+begin:vevent
+summary:马克思主义基本原理
+dtstart;value=date-time:20180226t080000
+dtend;value=date-time:20180226t094000
+uid:1(1-2)马克思主义基本原理
+rrule:freq=weekly;count=17
+exdate:20180423t080000,20180430t080000
+description:左伟清
+location:340301
+end:vevent
+...
+
+# text above is lowered
+```
