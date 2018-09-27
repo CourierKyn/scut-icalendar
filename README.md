@@ -25,7 +25,7 @@
 
 获取教务页面方法如下，以 Chrome 为例：
 
-![](https://user-images.githubusercontent.com/29699904/46151453-641dd500-c2a1-11e8-95bc-90bb473368ba.png)
+<img width="367" alt="2018-09-27 9 59 12" src="https://user-images.githubusercontent.com/29699904/46151453-641dd500-c2a1-11e8-95bc-90bb473368ba.png">
 
 然后右键源代码页面 > 另存为 > 选择仅 HTML。
 
