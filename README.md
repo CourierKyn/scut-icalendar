@@ -12,9 +12,23 @@
 
 在另一些设备上，你无法使用此文件。
 
-## releases
+## Releases
 
 待生成。
+
+## How to Run
+
+安装依赖：`$ pip install beautifulsoup4 icalendar`
+运行：`$ python parse.py`
+
+此程序将从同一目录下的 html 教务页面生成 ics 日历文件
+
+获取教务页面方法如下，以 Chrome 为例：
+
+![](https://user-images.githubusercontent.com/29699904/46151453-641dd500-c2a1-11e8-95bc-90bb473368ba.png)
+
+然后右键源代码页面 > 另存为 > 选择仅 HTML。
+
 
 ## 思路
 
