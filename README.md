@@ -19,6 +19,7 @@
 ## How to Run
 
 安装依赖：`$ pip install beautifulsoup4 icalendar`
+
 运行：`$ python parse.py`
 
 此程序将从同一目录下的 html 教务页面生成 ics 日历文件
