@@ -18,11 +18,11 @@
 
 ## How to Use
 
-见 `scut-icalendar.ipynb`。
+见 [`scut-icalendar.ipynb`](https://github.com/CourierKyn/scut-icalendar/blob/master/scut-icalendar.ipynb)。
 
 ## 思路
 
-[新版教务管理](http://xsweb.scuteo.com/default2.aspx) → 推荐课表打印 → 输出 Excel
+[新版教务管理](http://xsjw2018.scuteo.com/) → 推荐课表打印 → 输出 Excel
 
 ```
 '星期五', '第七八节': '金融市场学/1-9周,12-14周/大学城校区 A2207/齐昌玮/87'
