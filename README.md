@@ -1,9 +1,6 @@
 # scut-icalendar
 
-<!-- Example #1 - no styling -->
 Made with ❤ in Guangzhou
-<!-- Example #3 - CSS-style class for ❤ -->
-Made with <span class="heart">❤</span> in Guangzhou
 
 本项目致力于将校方提供的课程表转换成 iCalendar 标准（[RFC 5545](https://tools.ietf.org/html/rfc5545)）日历文件。
 
