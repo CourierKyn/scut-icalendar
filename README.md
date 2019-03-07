@@ -8,7 +8,7 @@
 
 * iOS 用户请在 Safari 浏览器中下载并打开该文件以导入课程表到日历。
 
-* 在 Mac 和 Windows 电脑上，你直接打开上面的文件即可。
+* 在 Mac 和 Windows 电脑上，你直接打开下面的文件即可。
 
 在另一些设备上，你无法使用此文件。
 
@@ -16,46 +16,41 @@
 
 待生成。
 
-## How to Run
+## How to Use
 
-安装依赖：`$ pip install beautifulsoup4 icalendar`
-
-运行：`$ python parse.py`
-
-此程序将从同一目录下的 html 教务页面生成 ics 日历文件
-
-获取教务页面方法如下，以 Chrome 为例：
-
-<img width="367" alt="2018-09-27 9 59 12" src="https://user-images.githubusercontent.com/29699904/46151453-641dd500-c2a1-11e8-95bc-90bb473368ba.png">
-
-然后右键源代码页面 > 另存为 > 选择仅 HTML。
-
+见 `scut-icalendar.ipynb`。
 
 ## 思路
 
-[教务管理](http://xsweb.scuteo.com/default2.aspx) → 专业推荐课表查询
+[新版教务管理](http://xsweb.scuteo.com/default2.aspx) → 推荐课表打印 → 输出 Excel
 
 ```
-[['马克思主义基本原理\n1-8,11-18(1,2)\n左伟清\n340301', ...], ...]
+'星期五', '第七八节': '金融市场学/1-9周,12-14周/大学城校区 A2207/齐昌玮/87'
 
     ↓
 
-[[['马克思主义基本原理',  (1, 8, 11, 18), (1, 2), '左伟清', '340301'], ...], ...]
+{'week_day': 5,
+ 'class_period': (7, 8),
+ 'name': '金融市场学',
+ 'week_period_text': '1-9周,12-14周',
+ 'week_period': (1, 14),
+ 'exclude_week': [10, 11],
+ 'location': '大学城校区 A2207',
+ 'professor': '齐昌玮',
+ 'student_number': '87'}
 
     ↓
 
-...
 begin:vevent
-summary:马克思主义基本原理
-dtstart;value=date-time:20180226t080000
-dtend;value=date-time:20180226t094000
-uid:1(1-2)马克思主义基本原理
-rrule:freq=weekly;count=17
-exdate:20180423t080000,20180430t080000
-description:左伟清
-location:340301
+summary:金融市场学
+dtstart;value=date-time:20190301t154500
+dtend;value=date-time:20190301t172000
+uid:5(7-8)金融市场学@franklinli.com
+rrule:freq=weekly;count=14
+exdate:20190503t154500,20190510t154500
+description:7-8节\n1-9周\,12-14周\n齐昌玮\n选课人数：87
+location:大学城校区 a2207
 end:vevent
-...
 
 # text above is lowered
 ```
