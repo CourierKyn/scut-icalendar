@@ -1,5 +1,9 @@
 # scut-icalendar
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/nitayneeman/made-with-love/master/preview.png" width="400" style="text-align: center" />
+</p>
+
 本项目致力于将校方提供的课程表转换成 iCalendar 标准（[RFC 5545](https://tools.ietf.org/html/rfc5545)）日历文件。
 
 ## 使用
