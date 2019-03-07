@@ -54,5 +54,3 @@ end:vevent
 
 # text above is lowered
 ```
-
-<p style="text-align:center">Made with <span style="color: #e25555;">&hearts;</span> by Franklin</p>
