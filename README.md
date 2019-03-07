@@ -1,16 +1,9 @@
 # scut-icalendar
 
 <!-- Example #1 - no styling -->
-Made with ❤ in Switzerland
-<!-- Example #2 - inline-styled ❤ -->
-Made with <span style="color: #e25555;">&#9829;</span> in Switzerland
-Made with <span style="color: #e25555;">&hearts;</span> in Switzerland
+Made with ❤ in Guangzhou
 <!-- Example #3 - CSS-style class for ❤ -->
-<style>.heart{color:#e25555;}</style>
-Made with <span class="heart">❤</span> in Switzerland
-<!-- Example #4 - external ❤-icon -->
-<link rel="stylesheet" type="text/css" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
-Made with <i class="icon ion-heart"></i> in Switzerland
+Made with <span class="heart">❤</span> in Guangzhou
 
 本项目致力于将校方提供的课程表转换成 iCalendar 标准（[RFC 5545](https://tools.ietf.org/html/rfc5545)）日历文件。
 
