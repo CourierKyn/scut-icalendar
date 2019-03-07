@@ -1,7 +1,5 @@
 # scut-icalendar
 
-Made with ❤ in Guangzhou
-
 本项目致力于将校方提供的课程表转换成 iCalendar 标准（[RFC 5545](https://tools.ietf.org/html/rfc5545)）日历文件。
 
 ## 使用
