@@ -16,7 +16,7 @@
 
 [`16金融学(汇丰精英班)课表.ics`](https://github.com/CourierKyn/scut-icalendar/releases/download/v5.0/16jinrongxue.huifengjingyingban.kebiao.ics)
 
-## How to Use
+## How to Run
 
 见 [`scut-icalendar.ipynb`](https://github.com/CourierKyn/scut-icalendar/blob/master/scut-icalendar.ipynb)。
 
