@@ -13,5 +13,5 @@
   'student_number': '14',
   'week_day': 4,
   'week_period': (1, 12),
-  'week_period_text': '1-12周'}},
+  'week_period_text': '1-12周'},
   datetime.date(2019, 2, 25)]
