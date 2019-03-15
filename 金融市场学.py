@@ -16,4 +16,4 @@
   'week_day': 5,
   'week_period': (1, 14),
   'week_period_text': '1-9周,12-14周'},
-  datetime.date(2019, 2, 25)]
+ datetime.date(2019, 2, 25)]
