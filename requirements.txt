@@ -1,3 +1,5 @@
 icalendar
 jupyter
 pandas
+beautifulsoup4
+xlrd
